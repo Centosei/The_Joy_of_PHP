@@ -7,11 +7,14 @@
 
 <body>
     <?php
+    // OOP
+    $mysqli = new mysqli("localhost", "root", "", "Cars");
+
     // capturing the values submitted from the form
-    $VIN = $_POST['VIN'];
-    $Make = $_POST['Make'];
-    $Model = $_POST['Model'];
-    $Price = $_POST['Asking_Price'];
+    $VIN = $mysqli->real_escape_string($_POST['VIN']);
+    $Make = $mysqli->real_escape_string($_POST['Make']);
+    $Model = $mysqli->real_escape_string($_POST['Model']);
+    $Price = $mysqli->real_escape_string($_POST['Asking_Price']);
 
     // build SQL query
     $query = "INSERT INTO `INVENTORY`
@@ -25,9 +28,6 @@
 
     // print $query
     echo $query . "<br />";
-
-    // OOP
-    $mysqli = new mysqli("localhost", "root", "", "Cars");
 
     // Check connection
     if ($mysqli->connect_errno) {
