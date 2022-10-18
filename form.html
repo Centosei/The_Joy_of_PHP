@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>form</title>
+  </head>
+  <body>
+    <h1>input the car detail in the form below</h1>
+    <form action="SubmitCar.php" method="post">
+      VIN:
+      <input
+        name="VIN"
+        type="text"
+        minlength="17"
+        maxlength="17"
+        required
+      /><br />
+      Make: <input name="Make" type="text" /><br />
+      Model: <input name="Model" type="text" /><br />
+      Price: <input name="Asking_Price" type="text" /><br />
+      <button>Register the new car</button>
+    </form>
+  </body>
+</html>
