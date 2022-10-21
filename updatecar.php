@@ -51,11 +51,17 @@
     // Perform query
     if ($result = $mysqli->query($query)) {
         echo "<p>You have successfully updated $Make $Model into the database.</p>";
+        $url = "Location: http://192.168.64.2/The_Joy_of_PHP/editcars.php?success=true";
     } else {
         echo "Error updating $VIN into the database: " . mysqli_error($mysqli) . "<br/>";
+        $url = "Location: http://192.168.64.2/The_Joy_of_PHP/editcars.php?success=false";
     }
 
     $mysqli->close();
+
+    // redirect to the editcars page
+    header($url);
+    exit();
     ?>
 </body>
 

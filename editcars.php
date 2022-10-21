@@ -12,6 +12,11 @@
 
 <body>
     <h1>Sam's Used Cars</h1>
+    <?php
+    if ($_GET['success'] == true) {
+        echo "<p>The data was successfully updated!!</p>";
+    };
+    ?>
     <h2>Choose an item you want to edit</h2>
     <?php
     include 'db.php';
