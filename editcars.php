@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,8 +16,12 @@
 <body>
     <h1>Sam's Used Cars</h1>
     <?php
-    if ($_GET['success'] == true) {
+    // if ($_GET['success'] == true) {
+    //     echo "<p>The data was successfully updated!!</p>";
+    // };
+    if (isset($_SESSION['success'])) {
         echo "<p>The data was successfully updated!!</p>";
+        unset($_SESSION['success']);
     };
     ?>
     <h2>Choose an item you want to edit</h2>
